@@ -9,3 +9,7 @@ Template Gradle project
 * PMD
 * JaCoCo
 
+Test travis:
+
+https://travis-ci.org/sloiza/template.svg?branch=master
+
