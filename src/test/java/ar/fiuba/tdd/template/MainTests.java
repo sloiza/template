@@ -10,16 +10,30 @@ public class MainTests {
     public void testNew() {
         MyQueue<Integer> queue = new MyQueue<Integer>(8);
         assertSame(queue.top(),8);
+        queue.add(4);
+        queue.add(8);
+        queue.add(16);
+        assertEquals(queue.size(),4);
     }
 
     @Test
-    public void isEmpty() {
+    public void isEmptyTrue() {
         MyQueue<Integer> queue = new MyQueue<Integer>();
         assertTrue(queue.isEmpty());
+    }
 
+    @Test
+    public void isEmptyFalse() {
+        MyQueue<Integer> queue = new MyQueue<Integer>();
         queue.add(4);
         assertFalse(queue.isEmpty());
 
+    }
+
+    @Test
+    public void isEmptyAfterRemove() {
+        MyQueue<Integer> queue = new MyQueue<Integer>();
+        queue.add(4);
         queue.remove();
         assertTrue(queue.isEmpty());
     }
@@ -39,9 +53,6 @@ public class MainTests {
         MyQueue<Integer> queue = new MyQueue<Integer>();
         queue.add(2);
         queue.add(4);
-
-        assertEquals(queue.size(),2);
-
         queue.remove();
         assertEquals(queue.size(),1);
 
@@ -50,22 +61,20 @@ public class MainTests {
     }
 
     @Test
-    public void size() {
+    public void sizeEmpty() {
         MyQueue<Integer> queue = new MyQueue<Integer>();
         assertEquals(queue.size(),0);
+    }
 
+    @Test
+    public void size() {
+        MyQueue<Integer> queue = new MyQueue<Integer>();
         queue.add(1);
-        assertEquals(queue.size(),1);
-
         queue.add(2);
         queue.add(3);
         queue.add(4);
         assertEquals(queue.size(),4);
-
-        queue.remove();
-        assertEquals(queue.size(),3);
     }
-
 
     @Test
     public void testTop() {

@@ -5,9 +5,9 @@ public interface QueueInterface<T> {
 
     int size();
 
-    void add(T item); // agregar un item
+    void add(T item); // add item to the end
 
-    T top(); // retornar el primer item, lanzar exception si esta vacío.
+    T top(); // return first item, throw exception if it is empty.
 
-    void remove(); // remover el primer item, lanzar exception si esta vacío.
+    void remove(); // remove first item, throw exception if it is empty.
 }
